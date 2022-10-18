@@ -59,5 +59,7 @@ int main() {
 		cout << "未找到合适的路径" << endl;
 	}
 
+	system("pause");
+
 	return 0;
 }
