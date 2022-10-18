@@ -35,11 +35,11 @@ int main() {
 	if (flag1) db = new DoubleBuffer();
 	Maze m(flag1, db);
 	m.build(flag2);
-	db->inputMode();
+	if(db) db->inputMode();
 	m.printStep();
 	system("pause");
 	system("cls");
-	db->reset();
+	if(db) db->reset();
 
 	if (flag0 == 1) {
 		m.dfs();
@@ -47,7 +47,10 @@ int main() {
 	else if(flag0 == 2) {
 		m.bfs();
 	}
-	db->close();
+	if (db) {
+		db->close();
+		delete db;
+	}
 	bool res = m.getRes();
 	if (res) {
 		m.printAns();
@@ -55,8 +58,6 @@ int main() {
 	else {
 		cout << "未找到合适的路径" << endl;
 	}
-
-	delete db;
 
 	return 0;
 }

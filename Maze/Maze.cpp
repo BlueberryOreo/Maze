@@ -158,7 +158,7 @@ void Maze::printAns()
 			}
 			cout << endl;
 		}
-		Sleep(500);
+		Sleep(200);
 	}
 	cout << endl;
 }
