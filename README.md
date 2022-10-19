@@ -14,7 +14,6 @@
   * ```DoubleBuffer.h``` 双缓冲类
   * ```Maze.vcxproj```
   * ```Maze.vcxproj.filters```
-  * ```Maze.vcxproj.user```
 
 ## 运行方法
 
