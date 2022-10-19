@@ -34,8 +34,10 @@ int main() {
 	DoubleBuffer* db = NULL;
 	if (flag1) db = new DoubleBuffer();
 	Maze m(flag1, db);
-	m.build(flag2);
 	if(db) db->inputMode();
+	system("cls");
+	m.build(flag2);
+	cout << "生成的迷宫如下：" << endl;
 	m.printStep();
 	system("pause");
 	system("cls");
@@ -56,6 +58,7 @@ int main() {
 		m.printAns();
 	}
 	else {
+		m.printStep();
 		cout << "未找到合适的路径" << endl;
 	}
 

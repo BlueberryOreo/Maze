@@ -1,7 +1,7 @@
 #include "Maze.h"
 #include "Point.h"
 
-Maze::Maze(bool flag, DoubleBuffer *db)
+Maze::Maze(bool flag, DoubleBuffer *db, int posibility)
 {
 	memset(maze, 0, sizeof(maze));
 	memset(visited, 0, sizeof(visited));
@@ -10,6 +10,7 @@ Maze::Maze(bool flag, DoubleBuffer *db)
 	res = false;
 	needPlay = flag;
 	this->db = db;
+	this->posibility = posibility;
 }
 
 Maze::~Maze()
@@ -25,7 +26,7 @@ void Maze::build(int flag)
 		for (int i = 0; i < 8; i ++) {
 			for (int j = 0; j < 8; j ++) {
 				int rnd = rand() % 10;
-				if (rnd > 6) maze[i][j] = 1;
+				if (rnd <= posibility) maze[i][j] = 1;
 				else maze[i][j] = 0;
 			}
 		}
